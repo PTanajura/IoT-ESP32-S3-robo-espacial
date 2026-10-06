@@ -6,8 +6,9 @@ Programar e simular o controle remoto de um robô móvel utilizando o microcontr
 # Lista de Componentes do Circuito
 
 | Componente            | Quantidade  | Pino no ESP32-S3                | Função                                           |
+| --------------------- | ----------- | ------------------------------- | ------------------------------------------------ |
 | ESP32-S3              | 1           | -                               | Microcontrolador do controle                     |
-| Joystick Analógico    | 1           | HORZ -> GPIO 4 / VERT -> GPIO 5 | Direcionamento (Frente, Trás, Esquerda, Direita) |
+| Joystick Analógico    | 1           | X -> GPIO 4 / Y -> GPIO 5       | Direcionamento (Frente, Trás, Esquerda, Direita) |
 | Botão                 | 1           | GPIO 12                         | Botão de desligar/ligar controle remoto          |
 | LED Verde             | 1           | GPIO 2                          | Indica controle ligado e conectado               |
 | LED Vermelho          | 1           | GPIO 1                          | Indica controle desligado e desconectado         |
