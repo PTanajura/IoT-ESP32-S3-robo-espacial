@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "author": "Pedro Tanajura Mendes",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-s3-devkitc-1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 15.6,
+      "left": 215,
+      "attrs": { "color": "red", "flip": "1" }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led2",
+      "top": 25.2,
+      "left": 244.2,
+      "attrs": { "color": "green", "flip": "1" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 198.2,
+      "left": -96,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-analog-joystick",
+      "id": "joystick1",
+      "top": -106.2,
+      "left": -196.2,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 61.85,
+      "left": 161.8,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r2",
+      "top": 51.95,
+      "left": 124.8,
+      "rotate": 180,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:12", "btn1:1.r", "green", [ "h0" ] ],
+    [ "btn1:2.r", "esp:GND.1", "black", [ "v0.2", "h110.88" ] ],
+    [ "joystick1:VCC", "esp:3V3.1", "red", [ "v0" ] ],
+    [ "esp:GND.2", "joystick1:GND", "black", [ "v0" ] ],
+    [ "led1:A", "r2:1", "red", [ "v0" ] ],
+    [ "r2:2", "esp:1", "red", [ "h109.43" ] ],
+    [ "r1:2", "esp:2", "red", [ "v0" ] ],
+    [ "led2:C", "esp:GND.4", "black", [ "v0" ] ],
+    [ "led1:C", "esp:GND.4", "black", [ "v0" ] ],
+    [ "led2:A", "r1:1", "red", [ "v0" ] ],
+    [ "joystick1:VERT", "esp:5", "green", [ "v0" ] ],
+    [ "joystick1:HORZ", "esp:4", "green", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
